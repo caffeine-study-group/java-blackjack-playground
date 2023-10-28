@@ -30,7 +30,8 @@ ex) git checkout -b apply-feedback
 - [ ] 블랙잭 게임 Class 구현
 - [ ] input Class 구현
 - [ ] output Class 구현
-- [ ] Card Class 구현
+- [x] Card Class 구현
+  - [x] 카드를 표현하기 위한 ENUM 추가
 - [ ] Cards Class 구현 (1급 콜렉션)
 - [ ] Card Deck Class 구현
 - [ ] 플레이어 Class 구현
