@@ -24,3 +24,15 @@ git checkout main // 기본 브랜치가 main인 경우
 git checkout -b 브랜치이름
 ex) git checkout -b apply-feedback
 ```
+
+### todo list  
+- [ ] 애플리케이션 구현
+- [ ] 블랙잭 게임 Class 구현
+- [ ] input Class 구현
+- [ ] output Class 구현
+- [ ] Card Class 구현
+- [ ] Cards Class 구현 (1급 콜렉션)
+- [ ] Card Deck Class 구현
+- [ ] 플레이어 Class 구현
+  - [ ] 참가자 Class 구현
+  - [ ] 딜러 Class 구현
