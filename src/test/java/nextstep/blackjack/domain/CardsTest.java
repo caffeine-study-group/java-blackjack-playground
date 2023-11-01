@@ -5,7 +5,9 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
-import java.util.PriorityQueue;
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -51,6 +53,15 @@ public class CardsTest {
         assertEquals(13, cards.getTotalScore());
         cards.addCard(new Card(CardSymbol.DIAMOND, CardNumber.ACE));
         assertEquals(14, cards.getTotalScore());
+    }
+
+    @Test
+    void test() {
+        List<Card> list = Arrays.stream(CardSymbol.values())
+                .flatMap(symbol -> Arrays.stream(CardNumber.values()).map(number -> new Card(symbol, number)))
+                .collect(Collectors.toList());
+        System.out.println(new Cards(list).getCardNames());
+        assertEquals(56, list.size());
     }
 
 

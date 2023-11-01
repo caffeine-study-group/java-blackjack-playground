@@ -37,6 +37,8 @@ ex) git checkout -b apply-feedback
   - [x] 소지한 카드의 목록을 출력
   - [x] 카드의 점수 총합을 계산
 - [ ] Card Deck Class 구현
+  - [ ] 카드뭉치 생성(셔플)
+  - [ ] 카드뽑기 기능 구현
 - [ ] 플레이어 Class 구현
   - [ ] 참가자 Class 구현
   - [ ] 딜러 Class 구현

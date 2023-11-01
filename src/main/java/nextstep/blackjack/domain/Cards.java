@@ -1,10 +1,13 @@
 package nextstep.blackjack.domain;
 
+import nextstep.blackjack.domain.interfaces.DeckCards;
+import nextstep.blackjack.domain.interfaces.PlayerCards;
+
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class Cards {
+public class Cards implements PlayerCards, DeckCards {
 
     private final List<Card> list;
 
@@ -29,5 +32,9 @@ public class Cards {
                     }
                     return total + card.getScore();
                 }, Integer::sum);
+    }
+
+    public Card draw() {
+        return list.remove(list.size() - 1);
     }
 }
