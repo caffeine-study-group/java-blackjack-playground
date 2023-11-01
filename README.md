@@ -32,10 +32,10 @@ ex) git checkout -b apply-feedback
 - [ ] output Class 구현
 - [x] Card Class 구현
   - [x] 카드를 표현하기 위한 ENUM 추가
-- [ ] Cards Class 구현 (1급 콜렉션)
+- [x] Cards Class 구현 (1급 콜렉션)
   - [x] 새로 뽑은 카드를 추가하는 기능
-  - [ ] 소지한 카드의 목록을 출력
-  - [ ] 카드의 점수 총합을 계산
+  - [x] 소지한 카드의 목록을 출력
+  - [x] 카드의 점수 총합을 계산
 - [ ] Card Deck Class 구현
 - [ ] 플레이어 Class 구현
   - [ ] 참가자 Class 구현

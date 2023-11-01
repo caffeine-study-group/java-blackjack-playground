@@ -13,4 +13,12 @@ public class Card {
     public String getName() {
         return String.format("%s%s", number.getName(), symbol.getName());
     }
+
+    public int getScore() {
+        return number.getScore();
+    }
+
+    public boolean isAce() {
+        return number.isAce();
+    }
 }

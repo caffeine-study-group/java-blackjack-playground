@@ -1,7 +1,6 @@
 package nextstep.blackjack.domain;
 
 public enum CardNumber {
-    ACE(1, "A"),
     ONE(1, "1"),
     TWO(2, "2"),
     THREE(3, "3"),
@@ -14,7 +13,8 @@ public enum CardNumber {
     TEN(10, "10"),
     KING(10, "K"),
     QUEEN(10, "Q"),
-    JACK(10, "J");
+    JACK(10, "J"),
+    ACE(11, "A");
 
 
     CardNumber(int score, String name) {
@@ -30,5 +30,9 @@ public enum CardNumber {
 
     public String getName() {
         return name;
+    }
+
+    public boolean isAce() {
+        return this.equals(ACE);
     }
 }
