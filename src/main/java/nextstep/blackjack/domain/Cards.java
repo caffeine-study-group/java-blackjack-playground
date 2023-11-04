@@ -5,6 +5,7 @@ import nextstep.blackjack.domain.interfaces.PlayerCards;
 
 import java.util.Comparator;
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.stream.Collectors;
 
 public class Cards implements PlayerCards, DeckCards {
@@ -35,6 +36,9 @@ public class Cards implements PlayerCards, DeckCards {
     }
 
     public Card draw() {
-        return list.remove(list.size() - 1);
+        if (list.size() == 0) {
+            throw new NoSuchElementException("남아있는 카드가 없습니다.");
+        }
+        return list.remove(0);
     }
 }

@@ -7,8 +7,17 @@ import java.util.stream.Collectors;
 
 public class CardDeck {
     DeckCards cards;
+    Strategy strategy;
 
     public CardDeck(Strategy strategy) {
-        Arrays.stream(CardSymbol.values()).collect(Collectors.toList());
+        this.strategy = strategy;
+    }
+
+    public void generate() {
+        cards = strategy.generate();
+    }
+
+    public Card draw() {
+        return cards.draw();
     }
 }
