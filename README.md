@@ -39,6 +39,6 @@ ex) git checkout -b apply-feedback
 - [x] Card Deck Class 구현
   - [x] 카드뭉치 생성(셔플)
   - [x] 카드뽑기 기능 구현
-- [ ] 플레이어 Class 구현
-  - [ ] 참가자 Class 구현
-  - [ ] 딜러 Class 구현
+- [x] 플레이어 Class 구현
+  - [x] 참가자 Class 구현
+  - [^] 딜러 Class 구현
