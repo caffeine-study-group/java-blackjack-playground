@@ -29,7 +29,7 @@ public class ParticipantTest {
         participant.takeCard(new Card(CardSymbol.CLOVER, CardNumber.ACE));
         participant.takeCard(new Card(CardSymbol.HEART, CardNumber.TEN));
         participant.takeCard(new Card(CardSymbol.DIAMOND, CardNumber.SEVEN));
-        assertEquals(" A클로버, 10하트, 7다이아몬드", participant.showCardNames());
+        assertEquals("A클로버, 10하트, 7다이아몬드", participant.showCardNames());
     }
 
     @Test
@@ -42,9 +42,9 @@ public class ParticipantTest {
     @Test
     void 배팅_테스트() {
         participant.betting(1);
-        assertEquals(-1, participant.getMoney());
+        assertEquals(1, participant.getBettingMoney());
         participant.betting(99999);
-        assertEquals(-100000, participant.getMoney());
+        assertEquals(100000, participant.getBettingMoney());
     }
 
     @Test

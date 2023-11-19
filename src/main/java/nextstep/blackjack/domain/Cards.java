@@ -10,6 +10,8 @@ import java.util.stream.Collectors;
 
 public class Cards implements PlayerCards, DeckCards {
 
+    public static final int BLACK_JACK_SCORE = 21;
+
     private final List<Card> list;
 
     public Cards(List<Card> list) {
@@ -40,5 +42,10 @@ public class Cards implements PlayerCards, DeckCards {
             throw new NoSuchElementException("남아있는 카드가 없습니다.");
         }
         return list.remove(0);
+    }
+
+    @Override
+    public int getCount() {
+        return list.size();
     }
 }
