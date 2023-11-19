@@ -8,4 +8,6 @@ public interface PlayerCards {
     String getCardNames();
 
     int getTotalScore();
+
+    int getCount();
 }
