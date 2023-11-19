@@ -1,5 +1,6 @@
 package nextstep.blackjack.domain;
 
+import nextstep.blackjack.domain.handler.*;
 import nextstep.blackjack.domain.interfaces.Dealer;
 import nextstep.blackjack.domain.interfaces.Player;
 import nextstep.blackjack.view.InputView;
@@ -9,14 +10,22 @@ public class BlackJack {
     private final CardDeck cardDeck;
     private final Dealer dealer;
     private Players participants;
-    private InputView inputView;
-    private OutputView outputView;
+    private final InputView inputView;
+    private final OutputView outputView;
+    private final Handler firstHandler;
 
     public BlackJack(Strategy strategy) {
         cardDeck = new CardDeck(strategy);
         dealer = new DealerImpl("딜러");
         inputView = new InputView();
         outputView = new OutputView();
+
+        this.firstHandler = new FirstHandler();
+        firstHandler.setNext(new ParticipantMatchPointHandler())
+                .setNext(new ParticipantBlackJackHandler())
+                .setNext(new DealerMatchPointHandler())
+                .setNext(new CompareUserHandler())
+                .setNext(new DealerWinHandler());
     }
 
     public void play() {
@@ -26,7 +35,7 @@ public class BlackJack {
         this.startRound();
         this.playRound();
         this.gameResult();
-        this.finalBettingMoney();;
+        this.finalBettingMoney();
     }
 
     public void startRound() {
@@ -57,9 +66,7 @@ public class BlackJack {
     }
 
     private void chooseMoreCard(Player player) {
-        if (player.isPlayerDied())
-            return;
-        if (player.moreThenMatchPoint())
+        if (player.isPlayerDied() || player.moreThenMatchPoint())
             return;
         if (inputView.isPlayingGamingMessage(player)) {
             player.takeCard(cardDeck.draw());
@@ -84,23 +91,6 @@ public class BlackJack {
     }
 
     private void vs(Dealer dealer, Player participant) {
-        if (dealer.isBlackJack() && participant.isBlackJack()) {
-            // nothing
-        } else if (participant.getScore() > 21) {
-            participant.lose();
-            dealer.win(participant.getBettingMoney());
-        } else if (participant.isBlackJack()) {
-            participant.win((int) Math.round(participant.getBettingMoney() * 1.5));
-            dealer.lose((int) Math.round(participant.getBettingMoney() * 1.5));
-        } else if (dealer.getScore() > 21) {
-            participant.win();
-            dealer.lose(participant.getBettingMoney());
-        } else if (participant.getScore() > dealer.getScore()) {
-            participant.win();
-            dealer.lose(participant.getBettingMoney());
-        } else {
-            participant.lose();
-            dealer.win(participant.getBettingMoney());
-        }
+        this.firstHandler.process(new Judgement(dealer, participant));
     }
 }
