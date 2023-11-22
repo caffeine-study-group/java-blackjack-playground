@@ -1,26 +1,28 @@
 package nextstep.blackjack.domain;
 
-import nextstep.blackjack.domain.handler.*;
-import nextstep.blackjack.domain.interfaces.Dealer;
-import nextstep.blackjack.domain.interfaces.Player;
+import nextstep.blackjack.domain.card.CardDeck;
+import nextstep.blackjack.domain.judgement.*;
+import nextstep.blackjack.domain.user.*;
+import nextstep.blackjack.domain.strategy.Strategy;
 import nextstep.blackjack.view.InputView;
 import nextstep.blackjack.view.OutputView;
 
 public class BlackJack {
     private final CardDeck cardDeck;
     private final Dealer dealer;
-    private Players participants;
+    private final Players participants;
     private final InputView inputView;
     private final OutputView outputView;
-    private final Handler firstHandler;
+    private final JudgementHandler firstHandler;
 
     public BlackJack(Strategy strategy) {
         cardDeck = new CardDeck(strategy);
         dealer = new DealerImpl("딜러");
+        participants = new Players();
         inputView = new InputView();
         outputView = new OutputView();
 
-        this.firstHandler = new FirstHandler();
+        this.firstHandler = new BlackJackHandler();
         firstHandler.setNext(new ParticipantMatchPointHandler())
                 .setNext(new ParticipantBlackJackHandler())
                 .setNext(new DealerMatchPointHandler())
@@ -30,7 +32,7 @@ public class BlackJack {
 
     public void play() {
         cardDeck.generate();
-        this.participants = new Players(this.inputView.entreeUsersNames());
+        this.inputView.entreeUsersNames().forEach(this.participants::entry);
         inputView.bettingMoney(this.participants);
         this.startRound();
         this.playRound();

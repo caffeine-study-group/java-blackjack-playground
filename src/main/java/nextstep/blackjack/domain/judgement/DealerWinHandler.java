@@ -1,6 +1,6 @@
-package nextstep.blackjack.domain.handler;
+package nextstep.blackjack.domain.judgement;
 
-public class DealerWinHandler implements Handler {
+public class DealerWinHandler implements JudgementHandler {
     @Override
     public void process(Judgement judgement) {
         judgement.getParticipant().lose();
@@ -8,7 +8,7 @@ public class DealerWinHandler implements Handler {
     }
 
     @Override
-    public Handler setNext(Handler handler) {
+    public JudgementHandler setNext(JudgementHandler handler) {
         throw new RuntimeException("next handler를 지정할 수 없습니다.");
     }
 }

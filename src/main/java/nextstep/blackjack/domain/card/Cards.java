@@ -1,7 +1,4 @@
-package nextstep.blackjack.domain;
-
-import nextstep.blackjack.domain.interfaces.DeckCards;
-import nextstep.blackjack.domain.interfaces.PlayerCards;
+package nextstep.blackjack.domain.card;
 
 import java.util.Comparator;
 import java.util.List;

@@ -1,7 +1,7 @@
 package nextstep.blackjack.view;
 
-import nextstep.blackjack.domain.Players;
-import nextstep.blackjack.domain.interfaces.Player;
+import nextstep.blackjack.domain.user.Players;
+import nextstep.blackjack.domain.user.Player;
 
 import java.util.Arrays;
 import java.util.List;

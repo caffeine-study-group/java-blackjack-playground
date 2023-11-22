@@ -1,6 +1,6 @@
-package nextstep.blackjack.domain.interfaces;
+package nextstep.blackjack.domain.user;
 
-import nextstep.blackjack.domain.Card;
+import nextstep.blackjack.domain.card.Card;
 
 public interface User {
     int getScore();

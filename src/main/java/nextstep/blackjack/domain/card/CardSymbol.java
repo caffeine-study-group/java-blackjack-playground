@@ -1,4 +1,4 @@
-package nextstep.blackjack.domain;
+package nextstep.blackjack.domain.card;
 
 public enum CardSymbol {
     SPADE("스페이드")

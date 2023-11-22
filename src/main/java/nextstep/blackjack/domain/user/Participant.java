@@ -1,6 +1,6 @@
-package nextstep.blackjack.domain;
+package nextstep.blackjack.domain.user;
 
-import nextstep.blackjack.domain.interfaces.Player;
+import nextstep.blackjack.domain.card.Cards;
 
 public class Participant extends UserImpl implements Player {
     private int bettingMoney;

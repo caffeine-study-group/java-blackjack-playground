@@ -1,6 +1,4 @@
-package nextstep.blackjack.domain.interfaces;
-
-import nextstep.blackjack.domain.Card;
+package nextstep.blackjack.domain.user;
 
 public interface Player extends User {
 

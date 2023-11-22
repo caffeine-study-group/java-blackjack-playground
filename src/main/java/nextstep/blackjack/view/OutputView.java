@@ -1,9 +1,9 @@
 package nextstep.blackjack.view;
 
-import nextstep.blackjack.domain.Players;
-import nextstep.blackjack.domain.interfaces.Dealer;
-import nextstep.blackjack.domain.interfaces.Player;
-import nextstep.blackjack.domain.interfaces.User;
+import nextstep.blackjack.domain.user.Players;
+import nextstep.blackjack.domain.user.Dealer;
+import nextstep.blackjack.domain.user.Player;
+import nextstep.blackjack.domain.user.User;
 
 public class OutputView {
 

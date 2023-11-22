@@ -1,6 +1,8 @@
 package nextstep.blackjack.domain;
 
-import nextstep.blackjack.domain.interfaces.DeckCards;
+import nextstep.blackjack.domain.card.*;
+import nextstep.blackjack.domain.strategy.NormalDistributeStrategy;
+import nextstep.blackjack.domain.strategy.Strategy;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;

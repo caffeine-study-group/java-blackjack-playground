@@ -1,6 +1,4 @@
-package nextstep.blackjack.domain;
-
-import nextstep.blackjack.domain.interfaces.Player;
+package nextstep.blackjack.domain.user;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,9 +7,8 @@ import java.util.stream.Collectors;
 public class Players {
     private final List<Player> list;
 
-    public Players(List<String> names) {
+    public Players() {
         list = new ArrayList<>();
-        names.forEach(m -> list.add(new Participant(m)));
     }
 
     public String getNames() {
@@ -20,5 +17,13 @@ public class Players {
 
     public List<Player> getPlayers() {
         return list;
+    }
+
+    public void entry(Player player) {
+        list.add(player);
+    }
+
+    public void entry(String player) {
+        list.add(new Participant(player));
     }
 }

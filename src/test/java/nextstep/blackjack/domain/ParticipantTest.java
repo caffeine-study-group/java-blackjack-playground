@@ -1,6 +1,10 @@
 package nextstep.blackjack.domain;
 
-import nextstep.blackjack.domain.interfaces.Player;
+import nextstep.blackjack.domain.card.Card;
+import nextstep.blackjack.domain.card.CardNumber;
+import nextstep.blackjack.domain.card.CardSymbol;
+import nextstep.blackjack.domain.user.Player;
+import nextstep.blackjack.domain.user.Participant;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

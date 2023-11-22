@@ -1,7 +1,7 @@
-package nextstep.blackjack.domain.handler;
+package nextstep.blackjack.domain.judgement;
 
-import nextstep.blackjack.domain.interfaces.Dealer;
-import nextstep.blackjack.domain.interfaces.Player;
+import nextstep.blackjack.domain.user.Dealer;
+import nextstep.blackjack.domain.user.Player;
 
 public class Judgement {
     private Dealer dealer;

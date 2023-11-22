@@ -1,6 +1,4 @@
-package nextstep.blackjack.domain;
-
-import nextstep.blackjack.domain.interfaces.Dealer;
+package nextstep.blackjack.domain.user;
 
 public class DealerImpl extends UserImpl implements Dealer {
 

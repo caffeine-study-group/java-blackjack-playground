@@ -1,6 +1,7 @@
-package nextstep.blackjack.domain;
+package nextstep.blackjack.domain.user;
 
-import nextstep.blackjack.domain.interfaces.User;
+import nextstep.blackjack.domain.card.Card;
+import nextstep.blackjack.domain.card.Cards;
 
 import java.util.ArrayList;
 

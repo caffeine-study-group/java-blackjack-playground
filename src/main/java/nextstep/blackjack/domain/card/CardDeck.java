@@ -1,9 +1,6 @@
-package nextstep.blackjack.domain;
+package nextstep.blackjack.domain.card;
 
-import nextstep.blackjack.domain.interfaces.DeckCards;
-
-import java.util.Arrays;
-import java.util.stream.Collectors;
+import nextstep.blackjack.domain.strategy.Strategy;
 
 public class CardDeck {
     DeckCards cards;

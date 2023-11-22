@@ -1,4 +1,9 @@
-package nextstep.blackjack.domain;
+package nextstep.blackjack.domain.strategy;
+
+import nextstep.blackjack.domain.card.Card;
+import nextstep.blackjack.domain.card.CardNumber;
+import nextstep.blackjack.domain.card.CardSymbol;
+import nextstep.blackjack.domain.card.Cards;
 
 import java.util.Arrays;
 import java.util.Collections;

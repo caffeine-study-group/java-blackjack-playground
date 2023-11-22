@@ -1,7 +1,7 @@
-package nextstep.blackjack.domain.handler;
+package nextstep.blackjack.domain.judgement;
 
-public class CompareUserHandler implements Handler {
-    private Handler handler;
+public class CompareUserHandler implements JudgementHandler {
+    private JudgementHandler handler;
 
     @Override
     public void process(Judgement judgement) {
@@ -16,7 +16,7 @@ public class CompareUserHandler implements Handler {
     }
 
     @Override
-    public Handler setNext(Handler handler) {
+    public JudgementHandler setNext(JudgementHandler handler) {
         this.handler = handler;
         return handler;
     }

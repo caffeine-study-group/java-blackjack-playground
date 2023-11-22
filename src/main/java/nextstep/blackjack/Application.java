@@ -1,8 +1,7 @@
 package nextstep.blackjack;
 
 import nextstep.blackjack.domain.BlackJack;
-import nextstep.blackjack.domain.NormalDistributeStrategy;
-import nextstep.blackjack.domain.RandomDistributeStrategy;
+import nextstep.blackjack.domain.strategy.RandomDistributeStrategy;
 
 public class Application {
     public static void main(String[] args) {
